@@ -9,3 +9,13 @@
 3 referring to
 
 	http://wiki.ros.org/rqt/Tutorials/Writing%20a%20C%2B%2B%20Plugin
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1 install 
+
+	sudo apt-get install ros-indigo-qt-create
+
+2 create
+
+	catkin_create_qt_pkg qdude
