@@ -18,4 +18,8 @@
 
 2 create
 
+
+http://xiaoyatec.com/2015/10/13/ros%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8Bqt-creator%E4%BA%8C/
+
+
 	catkin_create_qt_pkg qdude
