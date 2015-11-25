@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/user/peng/ROSCppGUI/devel -DCMAKE_INSTALL_PREFIX=/home/user/peng/ROSCppGUI/install -G Unix Makefiles
