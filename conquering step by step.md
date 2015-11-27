@@ -81,6 +81,16 @@ Possible errors:
 	
 		Delete CMakeCache.txt in the folder you executing cmake.
 
+	4. source ... No such dir and file...
+
+#	Solve:
+
+		To set your workspace permanently, open your .bashrc file in a text editor.
+
+		for example -- gedit ~/.bashrc -- and add
+
+		export ROS_PACKAGE_PATH=/your/path/to/workspace:$ROS_PACKAGE_PATH
+
 
 ===============================================================================================
 
