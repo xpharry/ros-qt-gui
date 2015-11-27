@@ -81,7 +81,11 @@ Possible errors:
 	
 		Delete CMakeCache.txt in the folder you executing cmake.
 
-	4. source ... No such dir and file...
+	4. If roscd says similar to roscd: No such package/stack 'beginner_tutorials' , you will need to source the environment setup file like you did at the end of the create_a_workspace tutorial:
+
+		$ source devel/setup.bash
+
+	5. source ... No such dir and file...
 
 #	Solve:
 
@@ -91,7 +95,6 @@ Possible errors:
 
 		export ROS_PACKAGE_PATH=/your/path/to/workspace:$ROS_PACKAGE_PATH
 
-
 ===============================================================================================
 
 Other links that may useful:
@@ -100,7 +103,11 @@ Other links that may useful:
 
 		http://wiki.ros.org/rqt/Tutorials/Writing%20a%20C%2B%2B%20Plugin
 
-	2. ros ide built by QT Creator
+	2. ros ide built by QT Creator & Communication Example
 
 		http://my.phirobot.com/blog/2013-12-ros_ide_qtcreator.htmlc 
+
+	3. project set
+
+		http://blog.csdn.net/zyh821351004/article/details/43672887
 
