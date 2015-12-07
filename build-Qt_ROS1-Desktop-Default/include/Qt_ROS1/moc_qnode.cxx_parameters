@@ -1,0 +1,16 @@
+-I/opt/ros/indigo/include
+-I/usr/include
+-I/usr/include/opencv
+-I/usr/include/qt4
+-I/usr/include/qt4/QtGui
+-I/usr/include/qt4/QtCore
+-I/home/peng/ros_ws/src/ROSCppGUI/build-Qt_ROS1-Desktop-Default
+-DROS_PACKAGE_NAME="Qt_ROS1"
+-DROSCONSOLE_BACKEND_LOG4CXX
+-DQT_NO_DEBUG
+-DQT_GUI_LIB
+-DQT_CORE_LIB
+-DQT_NO_KEYWORDS
+-o
+/home/peng/ros_ws/src/ROSCppGUI/build-Qt_ROS1-Desktop-Default/include/Qt_ROS1/moc_qnode.cxx
+/home/peng/ros_ws/src/ROSCppGUI/Qt_ROS1/include/Qt_ROS1/qnode.hpp

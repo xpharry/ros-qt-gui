@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/peng/ros_ws/src/ROSCppGUI/build-Qt_ROS1-Desktop-Default/devel/setup.sh

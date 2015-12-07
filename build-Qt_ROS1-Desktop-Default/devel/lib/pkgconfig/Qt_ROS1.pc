@@ -1,0 +1,8 @@
+prefix=/home/peng/ros_ws/src/ROSCppGUI/build-Qt_ROS1-Desktop-Default/devel
+
+Name: Qt_ROS1
+Description: Description of Qt_ROS1
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/peng/ros_ws/src/ROSCppGUI/build-Qt_ROS1-Desktop-Default/devel/lib 
+Requires: 
