@@ -177,3 +177,8 @@ Other links that may useful:
 
 		http://blog.csdn.net/zyh821351004/article/details/43672887
 
+
+===================
+
+https://aur.archlinux.org/packages/ros-indigo-qt-gui/
+
