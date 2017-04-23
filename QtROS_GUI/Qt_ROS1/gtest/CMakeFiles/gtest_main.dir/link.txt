@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -g   -shared -Wl,-soname,libgtest_main.so -o libgtest_main.so CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -L/home/merg/catkin_ws/src/Qt_ROS1/gtest/src -lpthread libgtest.so -lpthread -Wl,-rpath,/home/merg/catkin_ws/src/Qt_ROS1/gtest/src:/home/merg/catkin_ws/src/Qt_ROS1/gtest 
