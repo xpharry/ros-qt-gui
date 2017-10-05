@@ -1,4 +1,4 @@
-# Conquering Log
+# Developping Log
 
 ## 1. QT SDK 5.0 Installation
 
