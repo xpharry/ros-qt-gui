@@ -1,4 +1,4 @@
-# Procedure
+# Conquering Log
 
 ## 1. QT SDK 5.0 Installation
 
@@ -116,78 +116,83 @@ http://docs.ros.org/electric/api/qt_tutorials/html/index.html
 
 #### Possible errors:
 
-	1. CMake Error at /opt/ros/indigo/share/catkin/cmake/catkinConfig.cmake:75 (find_package):
-	  Could not find a package configuration file provided by "qt_build" with any
-	  of the following names:
+1. CMake Error at /opt/ros/indigo/share/catkin/cmake/catkinConfig.cmake:75 (find_package):
 
-	    qt_buildConfig.cmake
-	    qt_build-config.cmake
+```
+Could not find a package configuration file provided by "qt_build" with any of the following names:
 
-	  Add the installation prefix of "qt_build" to CMAKE_PREFIX_PATH or set
-	  "qt_build_DIR" to a directory containing one of the above files.  If
-	  "qt_build" provides a separate development package or SDK, be sure it has
-	  been installed.
+qt_buildConfig.cmake
+qt_build-config.cmake
 
-	**Solve:**
+Add the installation prefix of "qt_build" to CMAKE_PREFIX_PATH or set "qt_build_DIR" to a directory containing one of the above files.  If "qt_build" provides a separate development package or SDK, be sure it has been installed.
+```
 
-		`sudo apt-get install ros-indigo-qt-build`
+**Solve:**
 
-	Referring to:
+```
+sudo apt-get install ros-indigo-qt-build
+```
 
-		http://answers.ros.org/question/172056/failed-to-include-qt-ros-from-qt_build/
+Referring to:
 
-	2. catkin_make: command not found
+http://answers.ros.org/question/172056/failed-to-include-qt-ros-from-qt_build/
 
-		`$ source /opt/ros/indigo/setup.bash`
+2. catkin_make: command not found
 
-	   to add to your ~/.bashrc:
+```
+$ source /opt/ros/indigo/setup.bash
+```
 
-		`
-		echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
-		source ~/.bashrc
-		`
+to add to your ~/.bashrc:
 
-	3. CMake Error: The source "/home/peng/ros_ws/src/qtros/CMakeLists.txt" does not match the source "/home/peng/ros_ws/src/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
+```
+echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
 
-	**Search:**
+3. CMake Error: The source "/home/peng/ros_ws/src/qtros/CMakeLists.txt" does not match the source "/home/peng/ros_ws/src/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
+
+**Search:**
 
 	CMake Error: The source .. does not match the source .. used to generate cache.  Re-run cmake with a different source directory.
 
-	**Solve:**
-	
-		Delete CMakeCache.txt in the folder you executing cmake.
+**Solve:**
 
-	4. If roscd says similar to roscd: No such package/stack 'beginner_tutorials' , you will need to source the environment setup file like you did at the end of the create_a_workspace tutorial:
+	Delete CMakeCache.txt in the folder you executing cmake.
 
-		$ source devel/setup.bash
+4. If roscd says similar to roscd: No such package/stack 'beginner_tutorials' , you will need to source the environment setup file like you did at the end of the create_a_workspace tutorial:
 
-	5. source ... No such dir and file...
+```
+$ source devel/setup.bash
+```
 
-	**Solve:**
+5. source ... No such dir and file...
 
-		To set your workspace permanently, open your .bashrc file in a text editor.
+**Solve:**
 
-		for example -- gedit ~/.bashrc -- and add
+	To set your workspace permanently, open your .bashrc file in a text editor.
 
-		export ROS_PACKAGE_PATH=/your/path/to/workspace:$ROS_PACKAGE_PATH
+	for example -- gedit ~/.bashrc -- and add
 
-	6. http://stackoverflow.com/questions/2752352/how-to-add-include-path-in-qt-creator
+	export ROS_PACKAGE_PATH=/your/path/to/workspace:$ROS_PACKAGE_PATH
+
+6. http://stackoverflow.com/questions/2752352/how-to-add-include-path-in-qt-creator	
 
 ===============================================================================================
 
 ## Other links that may useful:
 
-	1. rqt plugin
+1. rqt plugin
 
-		http://wiki.ros.org/rqt/Tutorials/Writing%20a%20C%2B%2B%20Plugin
+	http://wiki.ros.org/rqt/Tutorials/Writing%20a%20C%2B%2B%20Plugin
 
-	2. ros ide built by QT Creator & Communication Example
+2. ros ide built by QT Creator & Communication Example
 
-		http://my.phirobot.com/blog/2013-12-ros_ide_qtcreator.htmlc 
+	http://my.phirobot.com/blog/2013-12-ros_ide_qtcreator.htmlc 
 
-	3. project set
+3. project set
 
-		http://blog.csdn.net/zyh821351004/article/details/43672887
+	http://blog.csdn.net/zyh821351004/article/details/43672887
 
 
 ===================
