@@ -1,44 +1,52 @@
-1. QT SDK 5.0 Installation
+# Procedure
 
-#	http://www.wikihow.com/Install-Qt-SDK-on-Ubuntu-Linux
+## 1. QT SDK 5.0 Installation
 
-** First Qt program
+http://www.wikihow.com/Install-Qt-SDK-on-Ubuntu-Linux
 
-#	http://www.wikihow.com/Create-Your-First-Qt-Program-on-Ubuntu-Linux
+*First Qt program*
 
-2. Qtcreator installation in terminal
+http://www.wikihow.com/Create-Your-First-Qt-Program-on-Ubuntu-Linux
 
-	$ sudo apt-get install ros-indigo-qt-create	
+# 2. Qtcreator installation in terminal
 
-	$ sudo apt-get install ros-indigo-qt-build
+```
+$ sudo apt-get install ros-indigo-qt-create	
+$ sudo apt-get install ros-indigo-qt-build
+$ sudo apt-get install qtcreator
+```
 
-	$ sudo apt-get install qtcreator
+## 3. Prepare the ros environment
 
-3. Prepare the ros environment
+```
+$ mkdir -p ~/ros_ws/src
+$ cd ~/ros_ws/src
+$ catkin_init_workspace
+$ cd ~/ros_ws/
+$ catkin_make
+$ echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
+```
 
-	$ mkdir -p ~/ros_ws/src
-	$ cd ~/ros_ws/src
-	$ catkin_init_workspace
-	$ cd ~/ros_ws/
-	$ catkin_make
-	$ echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
+## 4. Create qt_ros template
 
-4. Create qt_ros template
+```
+$ cd ~/ros_ws/src
+$ catkin_create_qt_pkg qdude
+```
 
-	$ cd ~/ros_ws/src
-	$ catkin_create_qt_pkg qdude
+## 5. Start qtcreator in terminal
 
-5. Start qtcreator in terminal
+```
+$ qtcreator
+```
 
-	$ qtcreator
+## 6. How to open a ros project in qtcreator?
 
-6. How to open a ros project in qtcreator?
+http://xiaoyatec.com/2015/10/13/ros%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8Bqt-creator%E4%BA%8C/
 
-#	http://xiaoyatec.com/2015/10/13/ros%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8Bqt-creator%E4%BA%8C/
+http://wiki.ros.org/IDEs#QtCreator
 
-#	http://wiki.ros.org/IDEs#QtCreator
-
-#NOTE:
+#### NOTE:
 
 1) rosbuild
 
@@ -52,8 +60,8 @@ Recently this has started to fail, because the main CMakeLists is a symlink to a
 
 To be able to modify all the files in the workspace add those lines in "src/CMakeLists.txt" :
 
-#Add all files in subdirectories of the project in
-# a dummy_target so qtcreator have access to all files
+**Add all files in subdirectories of the project in a dummy_target so qtcreator have access to all files**
+
 FILE(GLOB children ${CMAKE_SOURCE_DIR}/*)
 FOREACH(child ${children})
   IF(IS_DIRECTORY ${child})
@@ -71,28 +79,28 @@ With the new catkin_tools, there is no longer a top level make file for the whol
 
 =============================================================================================
 
-create rqt plugin pkg
+**create rqt plugin pkg**
 
-# http://wiki.ros.org/rqt/Tutorials/Create%20your%20new%20rqt%20plugin
+http://wiki.ros.org/rqt/Tutorials/Create%20your%20new%20rqt%20plugin
 
 	catkin_create_pkg rqt_mypkg roscpp rqt_gui rqt_gui_cpp
 
-Writing a C++ Plugin
+**Writing a C++ Plugin**
 
-# http://wiki.ros.org/rqt/Tutorials/Writing%20a%20C%2B%2B%20Plugin
+http://wiki.ros.org/rqt/Tutorials/Writing%20a%20C%2B%2B%20Plugin
 
-Using .ui file in rqt plugin
+**Using .ui file in rqt plugin**
 
-# http://wiki.ros.org/rqt/Tutorials/Using%20.ui%20file%20in%20rqt%20plugin
+http://wiki.ros.org/rqt/Tutorials/Using%20.ui%20file%20in%20rqt%20plugin
 
-Add a new ROS publisher node to a QTcreator project which already contains a ROS subscriber node
+**Add a new ROS publisher node to a QTcreator project which already contains a ROS subscriber node**
 
-# http://answers.ros.org/question/212459/add-a-new-ros-publisher-node-to-a-qtcreator-project-which-already-contains-a-ros-subscriber-node/
+http://answers.ros.org/question/212459/add-a-new-ros-publisher-node-to-a-qtcreator-project-which-already-contains-a-ros-subscriber-node/
 
 
 =============================================================================================
 
-useful resources in github:
+#### useful resources in github:
 
 https://github.com/ros-visualization
 
@@ -104,7 +112,7 @@ http://docs.ros.org/electric/api/qt_tutorials/html/index.html
 
 =============================================================================================
 
-Possible errors:
+#### Possible errors:
 
 	1. CMake Error at /opt/ros/indigo/share/catkin/cmake/catkinConfig.cmake:75 (find_package):
 	  Could not find a package configuration file provided by "qt_build" with any
@@ -118,9 +126,9 @@ Possible errors:
 	  "qt_build" provides a separate development package or SDK, be sure it has
 	  been installed.
 
-#	Solution:
+	Solution:
 
-		sudo apt-get install ros-indigo-qt-build
+		`sudo apt-get install ros-indigo-qt-build`
 
 	Referring to:
 
@@ -128,20 +136,22 @@ Possible errors:
 
 	2. catkin_make: command not found
 
-		$ source /opt/ros/indigo/setup.bash
+		`$ source /opt/ros/indigo/setup.bash`
 
 	   to add to your ~/.bashrc:
 
+		`
 		echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
 		source ~/.bashrc
+		`
 
 	3. CMake Error: The source "/home/peng/ros_ws/src/qtros/CMakeLists.txt" does not match the source "/home/peng/ros_ws/src/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
 
-#	Search
+	Search
 
 	CMake Error: The source .. does not match the source .. used to generate cache.  Re-run cmake with a different source directory.
 
-#	Solve:
+	Solve:
 	
 		Delete CMakeCache.txt in the folder you executing cmake.
 
@@ -151,7 +161,7 @@ Possible errors:
 
 	5. source ... No such dir and file...
 
-#	Solve:
+	Solve:
 
 		To set your workspace permanently, open your .bashrc file in a text editor.
 
@@ -163,7 +173,7 @@ Possible errors:
 
 ===============================================================================================
 
-Other links that may useful:
+## Other links that may useful:
 
 	1. rqt plugin
 
