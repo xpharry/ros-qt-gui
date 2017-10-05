@@ -62,6 +62,7 @@ To be able to modify all the files in the workspace add those lines in "src/CMak
 
 **Add all files in subdirectories of the project in a dummy_target so qtcreator have access to all files**
 
+```
 FILE(GLOB children ${CMAKE_SOURCE_DIR}/*)
 FOREACH(child ${children})
   IF(IS_DIRECTORY ${child})
@@ -70,8 +71,9 @@ FOREACH(child ${children})
   ENDIF()
 ENDFOREACH()
 add_custom_target(dummy_${PROJECT_NAME} SOURCES ${extra_files})
+```
 
-You may specify the correct catkin devel and install spaces at Projects->Build Settings by providing the following CMake arguments: -DCATKIN_DEVEL_PREFIX=../devel -DCMAKE_INSTALL_PREFIX=../install
+You may specify the correct catkin devel and install spaces at Projects->Build Settings by providing the following CMake arguments: `-DCATKIN_DEVEL_PREFIX=../devel -DCMAKE_INSTALL_PREFIX=../install`
 
 3) catkin tools
 
@@ -126,7 +128,7 @@ http://docs.ros.org/electric/api/qt_tutorials/html/index.html
 	  "qt_build" provides a separate development package or SDK, be sure it has
 	  been installed.
 
-	Solution:
+	**Solve:**
 
 		`sudo apt-get install ros-indigo-qt-build`
 
@@ -147,11 +149,11 @@ http://docs.ros.org/electric/api/qt_tutorials/html/index.html
 
 	3. CMake Error: The source "/home/peng/ros_ws/src/qtros/CMakeLists.txt" does not match the source "/home/peng/ros_ws/src/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
 
-	Search
+	**Search:**
 
 	CMake Error: The source .. does not match the source .. used to generate cache.  Re-run cmake with a different source directory.
 
-	Solve:
+	**Solve:**
 	
 		Delete CMakeCache.txt in the folder you executing cmake.
 
@@ -161,7 +163,7 @@ http://docs.ros.org/electric/api/qt_tutorials/html/index.html
 
 	5. source ... No such dir and file...
 
-	Solve:
+	**Solve:**
 
 		To set your workspace permanently, open your .bashrc file in a text editor.
 
